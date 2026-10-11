@@ -1,4 +1,684 @@
 { "commands": [
-
+{ "hdr": "743", "dbg": true, "cmd": {"22": "001F"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_ECT", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature"}
+  ]},
+{ "hdr": "743", "dbg": true, "cmd": {"22": "0025"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_VSS", "path": "Movement", "fmt": { "len": 16, "blsb": true, "max": 6553, "div": 10, "unit": "kilometersPerHour" }, "name": "Vehicle speed"}
+  ]},
+{ "hdr": "743", "dbg": true, "cmd": {"22": "0026"}, "freq": 30,
+  "signals": [
+    {"id": "SEALION_ODO", "path": "Trips", "fmt": { "len": 24, "blsb": true, "max": 1677721, "div": 10, "unit": "kilometers" }, "name": "Odometer"}
+  ]},
+{ "hdr": "743", "dbg": true, "cmd": {"22": "0101"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_THROTTLE_DEPTH", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "percent" }, "name": "Throttle depth"}
+  ]},
+{ "hdr": "743", "dbg": true, "cmd": {"22": "0102"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_BRAKE_DEPTH", "path": "Control", "fmt": { "len": 8, "max": 255, "unit": "percent" }, "name": "Brake depth"}
+  ]},
+{ "hdr": "743", "dbg": true, "cmd": {"22": "0104"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_FRONT_DRIVE_TGT_TQ", "path": "Engine", "fmt": { "len": 16, "blsb": true, "max": 2776, "min": -3776, "div": 10, "add": -500, "sign": true, "unit": "newtonMeters" }, "name": "Front drive, target torque"}
+  ]},
+{ "hdr": "743", "dbg": true, "cmd": {"22": "0105"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_REAR_DRIVE_TGT_TQ", "path": "Engine", "fmt": { "len": 16, "blsb": true, "max": 2776, "min": -3776, "div": 10, "add": -500, "sign": true, "unit": "newtonMeters" }, "name": "Rear drive, target torque"}
+  ]},
+{ "hdr": "762", "dbg": true, "cmd": {"22": "000C"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_12V_BAT_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "12V battery voltage"}
+  ]},
+{ "hdr": "762", "dbg": true, "cmd": {"22": "000D"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_12V_BAT_CELL_1", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "12V battery cell 1"}
+  ]},
+{ "hdr": "762", "dbg": true, "cmd": {"22": "0013"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_12V_BAT_NEGATIVE_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "12V battery negative contact temperature"}
+  ]},
+{ "hdr": "762", "dbg": true, "cmd": {"22": "0014"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_12V_BAT_MOS_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "12V battery MOS temperature"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "019C"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_7_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 7 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "019D"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_7_LOWEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 7 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "019E"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_7_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 7 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "019F"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_7_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 7 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A0"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_7_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 7 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A1"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_7_LOWEST_T_CELL_781", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 7 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A2"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_7_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 7 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A3"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_7_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 7 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A4"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_8_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 8 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A5"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_8_LOWEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 8 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A6"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_8_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 8 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A7"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_8_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 8 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A8"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_8_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 8 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01A9"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_8_LOWEST_T_CELL_781", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 8 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01AA"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_8_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 8 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01AB"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_8_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 8 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01AC"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_9_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 9 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01AD"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_9_LOWEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 9 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01AE"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_9_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 9 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01AF"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_9_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 9 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B0"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_9_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 9 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B1"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_9_LOWEST_T_CELL_781", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 9 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B2"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_9_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 9 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B3"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_9_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 9 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B4"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_10_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 10 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B5"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_10_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 10 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B6"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_10_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 10 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B7"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_10_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 10 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B8"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_10_LOWEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 10 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01B9"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_10_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 10 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01BA"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_10_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 10 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01BB"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_10_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 10 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01BC"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_LOWEST_V_CELL_NUMBER", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 11 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01BD"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_LOWEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 11 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01BE"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_HIGHEST_V_CELL_NUMBER", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 11 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01BF"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_HIGHEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 11 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C0"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_11_LOWEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 11 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C1"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_11_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 11 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C2"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_11_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 11 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C3"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_11_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 11 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C4"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_LOWEST_V_CELL_NUMBER", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 12 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C5"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_LOWEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 12 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C6"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_HIGHEST_V_CELL_NUMBER", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 12 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C7"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_HIGHEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 12 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C8"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_12_LOWEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 12 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01C9"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_12_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 12 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01CA"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_12_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 12 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01CB"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_12_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 12 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01CC"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_LOWEST_V_CELL_NUMBER", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 13 lowest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01CD"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_LOWEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 13 lowest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01CE"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_HIGHEST_V_CELL_NUMBER", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 13 highest voltage cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01CF"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_HIGHEST_V_CELL_781", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 13 highest voltage cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01D0"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_13_LOWEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 13 lowest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01D1"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_13_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 13 lowest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01D2"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_13_HIGHEST_T", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 13 highest temperature cell number"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "01D3"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_PACK_13_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Pack 13 highest temperature cell value"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "1FFD"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_ST_CHG_ACT", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 655, "div": 100, "unit": "percent" }, "name": "State of charge, actual"}
+  ]},
+{ "hdr": "782", "dbg": true, "cmd": {"22": "2001"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_FL_WHL_SPD", "path": "Tires", "fmt": {           "len": 16, "max": 4503, "mul": 2749, "div": 40000, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "SEALION_FR_WHL_SPD", "path": "Tires", "fmt": {"bix": 16, "len": 16, "max": 4503, "mul": 2749, "div": 40000, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "SEALION_RL_WHL_SPD", "path": "Tires", "fmt": {"bix": 32, "len": 16, "max": 4503, "mul": 2749, "div": 40000, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "SEALION_RR_WHL_SPD", "path": "Tires", "fmt": {"bix": 48, "len": 16, "max": 4503, "mul": 2749, "div": 40000, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]},
+{ "hdr": "783", "dbg": true, "cmd": {"22": "0003"}, "freq": 0.25,
+  "signals": [
+    {"id": "SEALION_STEER_WHL_ANG", "path": "Tires", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+  ]},
+{ "hdr": "797", "dbg": true, "cmd": {"22": "0007"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_AC_SIDE_CURRENT", "path": "Engine", "fmt": { "len": 8, "max": 51, "div": 5, "unit": "amps" }, "name": "AC side current"}
+  ]},
+{ "hdr": "797", "dbg": true, "cmd": {"22": "0019"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_COOLING_FAN_DUTY", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "percent" }, "name": "Cooling fan duty cycle"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0103"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_ENG_OUTLET_WATER_T", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Engine outlet water temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0106"}, "freq": 30,
+  "signals": [
+    {"id": "SEALION_FLI_INPUT", "path": "Fuel", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "liters" }, "name": "Fuel level input"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0107"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_CYL_HEAD_OIL_T", "path": "Engine", "fmt": { "len": 16, "max": -273, "min": -273, "mul": 3, "div": 1280000, "add": -273.15, "unit": "celsius" }, "name": "Cylinder head oil temperature, modeled"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "010F"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_BOOST_P_ACT", "path": "Engine", "fmt": { "len": 16, "max": 5119, "mul": 5, "div": 64, "unit": "unknown" }, "name": "Boost pressure, actual"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0111"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_FUEL_FLOW", "path": "Fuel", "fmt": { "len": 16, "max": 0.039, "mul": 149, "div": 250000000, "unit": "unknown" }, "name": "Fuel flow"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0112"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_BOOST_P_TGT", "path": "Engine", "fmt": { "len": 16, "max": 5119, "mul": 5, "div": 64, "unit": "unknown" }, "name": "Boost pressure, target"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "017C"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_ENG_WATER_T_START", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Engine water temperature at start"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0180"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_MIS_1", "path": "Engine", "fmt": { "len": 16, "max": 5119, "mul": 5, "div": 64, "unit": "unknown" }, "name": "Misfires, cylinder 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0181"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_MIS_4", "path": "Engine", "fmt": { "len": 16, "max": 5119, "mul": 5, "div": 64, "unit": "unknown" }, "name": "Misfires, cylinder 4"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0182"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_MIS_3", "path": "Engine", "fmt": { "len": 16, "max": 5119, "mul": 5, "div": 64, "unit": "unknown" }, "name": "Misfires, cylinder 3"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0183"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_MIS_2", "path": "Engine", "fmt": { "len": 16, "max": 5119, "mul": 5, "div": 64, "unit": "unknown" }, "name": "Misfires, cylinder 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "210A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_ENG_TOT_MILEAGE", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Engine total mileage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "211F"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_RADIATOR_OUTLET_T", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Radiator outlet water temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2129"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_BOOST_T", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Boost temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2143"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_INSTRUMENT_PANEL_TOT", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Instrument panel total mileage"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0004"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_TIMES_OFF_FULL_POWER", "path": "Engine", "fmt": { "len": 16, "blsb": true, "max": 65535, "unit": "scalar" }, "name": "Times off full power, second-rate"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0005"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_HVBAT_ST_CHG", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "percent" }, "name": "High voltage battery state of charge"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0008"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_BAT_TOT_V", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65535, "unit": "volts" }, "name": "Battery total voltage"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0009"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_BAT_TOT_CURRENT", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 6053, "min": -500, "div": 10, "add": -500, "unit": "amps" }, "name": "Battery total current"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "000A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_MAX_ALLOWED_CHG", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 6553, "div": 10, "unit": "kilowatts" }, "name": "Maximum allowed charge power"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "000B"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_CHG_TIMES", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65535, "unit": "scalar" }, "name": "Charge times"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "000E"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_MAX_ALLOWED_DCHG", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 6553, "div": 10, "unit": "kilowatts" }, "name": "Maximum allowed discharge power"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "000F"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_ACCUMULATED_CHG", "path": "Battery", "fmt": { "len": 24, "blsb": true, "max": 16777215, "unit": "ampereHours" }, "name": "Accumulated charge power, ah"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0010"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_ACCUMULATED_DCHG", "path": "Battery", "fmt": { "len": 24, "blsb": true, "max": 16777215, "unit": "ampereHours" }, "name": "Accumulated discharge power, ah"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0011"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_ACCUMULATED_CHG_ENERGY", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65535, "unit": "kilowattHours" }, "name": "Accumulated charge energy"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0012"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_ACCUMULATED_DCHG_ENERGY", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65535, "unit": "kilowattHours" }, "name": "Accumulated discharge energy"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "002A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Lowest voltage cell #"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "002B"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "002C"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Highest voltage cell #"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "002D"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_HIGHEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "002E"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_LOWEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Lowest temperature cell #"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "002F"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_LOWEST_T_CELL_7E7", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Lowest temperature cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0030"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_HIGHEST_T_CELL", "path": "Engine", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Highest temperature cell #"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0031"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_HIGHEST_T_CELL_7E7", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Highest temperature cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0032"}, "freq": 5,
+  "signals": [
+    {"id": "SEALION_BAT_PACK_AVG_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Battery pack average temperature"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0160"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_1_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 1 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0161"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_1_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 1 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0162"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_1_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 1 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0163"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_1_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 1 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0164"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_2_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 2 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0165"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_2_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 2 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0166"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_2_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 2 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0167"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_2_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 2 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0168"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_3_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 3 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0169"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_3_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 3 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "016A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_3_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 3 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "016B"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_3_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 3 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "016C"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_4_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 4 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "016D"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_4_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 4 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "016E"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_4_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 4 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "016F"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_4_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 4 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0170"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_5_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 5 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0171"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_5_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 5 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0172"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_5_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 5 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0173"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_5_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 5 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0174"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_6_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 6 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0175"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_6_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 6 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0176"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_6_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 6 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0177"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_6_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 6 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0178"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_7_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 7 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0179"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_7_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 7 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "017A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_7_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 7 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "017B"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_7_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 7 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "017C"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_8_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 8 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "017D"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_8_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 8 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "017E"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_8_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 8 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "017F"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_8_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 8 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0180"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_9_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 9 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0181"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_9_LOWEST_V_CELL_7E7", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 9 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0182"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_9_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 9 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0183"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_9_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 9 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0184"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_10_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 10 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0185"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_10_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 10 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0186"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_10_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 10 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0187"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_6_PACK_10_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 10 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0188"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 11 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0189"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 11 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "018A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 11 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "018B"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_11_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 11 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "018C"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 12 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "018D"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 12 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "018E"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 12 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "018F"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_12_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 12 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0190"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 13 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0191"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 13 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0192"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 13 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0193"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_13_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 13 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0194"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_14_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 14 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0195"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_14_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 14 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0196"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_14_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 14 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0197"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_14_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 14 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0198"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_15_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 15 lowest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "0199"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_15_LOWEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 15 lowest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "019A"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_15_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Pack 15 highest voltage cell number"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "019B"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_PACK_15_HIGHEST_V_CELL", "path": "Battery", "fmt": { "len": 16, "blsb": true, "max": 65.53, "div": 1000, "unit": "volts" }, "name": "Pack 15 highest voltage cell value"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "1FFC"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_HVBAT_PACK_NOMINAL", "path": "Battery", "fmt": {           "len": 16, "blsb": true, "max": 655, "div": 100, "unit": "percent"     }, "name": "High voltage battery pack nominal state of charge"},
+    {"id": "SEALION_HVBAT_PACK_FACTORY", "path": "Battery", "fmt": {"bix": 16, "len": 16, "blsb": true, "max": 655, "div": 100, "unit": "ampereHours" }, "name": "High voltage battery pack factory capacity"}
+  ]},
+{ "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "1FFE"}, "freq": 1,
+  "signals": [
+    {"id": "SEALION_HVBAT_PACK_FACTORY_ST_CHG", "path": "Battery", "fmt": {           "len": 16, "blsb": true, "max": 655, "div": 100, "unit": "percent"     }, "name": "High voltage battery pack factory state of charge"},
+    {"id": "SEALION_HVBAT_PACK_FACTORY_CAP",    "path": "Battery", "fmt": {"bix": 16, "len": 16, "blsb": true, "max": 655, "div": 100, "unit": "ampereHours" }, "name": "High voltage battery pack factory capacity"}
+  ]}
 ]
 }
