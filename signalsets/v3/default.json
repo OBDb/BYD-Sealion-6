@@ -1,4 +1,7 @@
-{ "commands": [
+{ "ecu": [
+    { "hdr": "7E7", "type": "battery" }
+  ],
+  "commands": [
 { "hdr": "743", "dbg": true, "cmd": {"22": "001F"}, "freq": 5,
   "signals": [
     {"id": "SEALION_ECT", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature"}
